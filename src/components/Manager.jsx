@@ -11,7 +11,6 @@ const Manager = () => {
 
     useEffect(() => {
         let passwords = localStorage.getItem("passwords");
-        console.log(passwords);
 
         // ?CHECKING IF PASSWORDS EXISTS IN LOCALSTORAGE
         if (passwords) {
@@ -22,7 +21,6 @@ const Manager = () => {
 
 
     const showPassword = () => {
-        console.log(ref.current.src);
         if (ref.current.src.includes("icons/eyecross.png")) {
             ref.current.src = "icons/eye.png";
             passwordRef.current.type = "password";
@@ -82,11 +80,9 @@ const Manager = () => {
                 });
             }
         }
-
     }
 
     const editPassword = (id) => {
-        console.log(`Editing Password with id ${id}`);
 
         // ?SINCE IT'S AN ARRAY OF OBJECTS, NEED TO WRITE [0]
         setform(passwordArray.filter(item => item.id === id)[0]);
@@ -96,7 +92,6 @@ const Manager = () => {
     }
 
     const deletePassword = (id) => {
-        console.log(`Deleting Password with id ${id}`);
         let checkConfirm = confirm("Are you sure you want to delete this password?");
 
         if (checkConfirm) {
